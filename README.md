@@ -202,7 +202,7 @@ https://drive.google.com/file/d/1ZXv1Ulu4TNipNlRb0rF5R8O6AYeEhW7h/view?usp=shari
 
 **Mary Sophia R**
 
-Software Engineering Student | MERN Stack Developer
+Aspiring Software Engineer | AI & ML Engineering Student
 
 ---
 
