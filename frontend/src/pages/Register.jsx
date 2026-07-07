@@ -15,17 +15,14 @@ function Register() {
       email,
       password
     });
-    // Save JWT Token
     localStorage.setItem(
       "token",
       res.data.token
     );
-    // Save User Details
     localStorage.setItem(
       "user",
       JSON.stringify(res.data.user)
     );
-    // ADD THIS
     localStorage.setItem(
       "loginType",
       "register"

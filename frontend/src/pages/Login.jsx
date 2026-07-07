@@ -21,10 +21,10 @@ function Login() {
       "user",
       JSON.stringify(res.data.user)
     );
-    // ADD THIS
+    console.log("LOGIN PAGE EXECUTED");
     localStorage.setItem(
-      "loginType",
-      "login"
+    "loginType",
+    "login"
     );
     navigate("/");
   }
