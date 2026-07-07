@@ -41,28 +41,10 @@ distance:8
 const user = JSON.parse(
   localStorage.getItem("user") || "{}"
 );
-
-const [loginType, setLoginType] = useState(
-  localStorage.getItem("loginType")
-);
+const loginType = localStorage.getItem("loginType");
 useEffect(() => {
-
   fetchTasks();
-
-  if (loginType) {
-
-    const timer = setTimeout(() => {
-
-      localStorage.removeItem("loginType");
-      setLoginType(null);
-
-    }, 3000);
-
-    return () => clearTimeout(timer);
-
-  }
-
-}, [loginType]);
+}, []);
 async function fetchTasks(){
 try{
 const res = await API.get("/tasks");
