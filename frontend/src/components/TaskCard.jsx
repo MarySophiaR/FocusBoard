@@ -152,8 +152,7 @@ Edit
 {
 (mode==="dashboard" ||
 mode==="all" ||
-mode==="pending" ||
-mode==="reminder")
+mode==="pending" )
 &&
 <button
 type="button"
