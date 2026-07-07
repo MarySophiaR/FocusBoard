@@ -256,8 +256,8 @@ message &&
 <div className="dashboard-header">
   <h1 className="dashboard-title">
     {loginType === "register"
-      ? `Welcome, ${user.username || "User"}!`
-      : `Welcome back, ${user.username || "User"}!`}
+      ? `Welcome, ${user.username}!`
+      : `Welcome back, ${user.username}!`}
   </h1>
   <p className="dashboard-subtitle">
     Let's make today productive.
