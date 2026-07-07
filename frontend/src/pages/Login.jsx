@@ -21,7 +21,6 @@ function Login() {
       "user",
       JSON.stringify(res.data.user)
     );
-    console.log("LOGIN PAGE EXECUTED");
     localStorage.setItem(
     "loginType",
     "login"
