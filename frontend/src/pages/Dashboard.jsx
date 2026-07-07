@@ -39,19 +39,30 @@ distance:8
 })
 );
 const user = JSON.parse(
-  localStorage.getItem("user")
+  localStorage.getItem("user") || "{}"
 );
-const loginType = localStorage.getItem(
-  "loginType"
+
+const [loginType, setLoginType] = useState(
+  localStorage.getItem("loginType")
 );
-useEffect(()=>{
+useEffect(() => {
+
   fetchTasks();
-  if(localStorage.getItem("loginType")){
-    setTimeout(()=>{
+
+  if (loginType) {
+
+    const timer = setTimeout(() => {
+
       localStorage.removeItem("loginType");
-    },100);
+      setLoginType(null);
+
+    }, 3000);
+
+    return () => clearTimeout(timer);
+
   }
-},[]);
+
+}, [loginType]);
 async function fetchTasks(){
 try{
 const res = await API.get("/tasks");
@@ -245,8 +256,8 @@ message &&
 <div className="dashboard-header">
   <h1 className="dashboard-title">
     {loginType === "register"
-      ? `Welcome, ${user.username}!`
-      : `Welcome back, ${user.username}!`}
+      ? `Welcome, ${user.username || "User"}!`
+      : `Welcome back, ${user.username || "User"}!`}
   </h1>
   <p className="dashboard-subtitle">
     Let's make today productive.
